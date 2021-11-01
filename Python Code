@@ -1,0 +1,29 @@
+# CREATED BY YIWERE MUFTAWU MOHAMMED
+
+
+import cv2
+import pyautogui
+from cvzone.HandTrackingModule import HandDetector
+
+cap = cv2.VideoCapture(0)
+detector = HandDetector(detectionCon=0.8)
+
+while 1:
+    success, image = cap.read() 
+    hands, bboxInfo = detector.findHands(image)
+    if len(hands) == 1:
+        if detector.fingersUp(hands[0]) == [ 0,1,1,0,0]:
+         break
+
+pyautogui.write('my3041520',interval=0.3)
+pyautogui.press("enter") 
+
+
+
+
+
+
+
+
+
+
